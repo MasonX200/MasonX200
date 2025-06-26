@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile - DevCard v7</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="code-rain"></div>
+        <div class="floating-icons"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-container">
+        <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <img src="https://avatars.githubusercontent.com/u/100000?v=4" alt="Profile" id="profile-img">
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="profile-info">
+                                <h1 class="name" id="user-name">SeiFox</h1>
+                                <p class="username" id="username">@seifox</p>
+                                <p class="bio" id="bio">Full-stack developer passionate about creating amazing digital experiences</p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link" id="github-link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="social-link" id="twitter-link">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link" id="linkedin-link">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="social-link" id="email-link">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="typing-animation">
+                            <div class="terminal">
+                                <div class="terminal-header">
+                                    <div class="terminal-buttons">
+                                        <span class="btn red"></span>
+                                        <span class="btn yellow"></span>
+                                        <span class="btn green"></span>
+                                    </div>
+                                    <span class="terminal-title">terminal</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <div class="terminal-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command" id="typing-text"></span>
+                                        <span class="cursor">|</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="file-name">about.js</span>
+                                <div class="code-actions">
+                                    <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                                </div>
+                            </div>
+                            <div class="code-content">
+                                <pre><code id="about-code"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-grid">
+                        <h3>Tech Stack</h3>
+                        <div class="skills" id="skills-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid" id="projects-container"></div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="section">
+            <div class="container">
+                <h2 class="section-title">GitHub Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-commits">0</h3>
+                            <p>Total Commits</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-stars">0</h3>
+                            <p>Stars Earned</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-repos">0</h3>
+                            <p>Repositories</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-followers">0</h3>
+                            <p>Followers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contribution-graph">
+                    <h3>Contribution Activity</h3>
+                    <div class="graph-container" id="contribution-container"></div>
+                    <div class="graph-legend">
+                        <span>Less</span>
+                        <div class="legend-colors">
+                            <div class="legend-color" data-level="0"></div>
+                            <div class="legend-color" data-level="1"></div>
+                            <div class="legend-color" data-level="2"></div>
+                            <div class="legend-color" data-level="3"></div>
+                            <div class="legend-color" data-level="4"></div>
+                        </div>
+                        <span>More</span>
+                    </div>
+                </div>
+                
+                <div class="language-stats">
+                    <h3>Most Used Languages</h3>
+                    <div class="language-chart" id="language-chart"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p id="contact-email">hello@seifox.dev</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p id="contact-location">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <h4>Availability</h4>
+                                <p>Open for opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 SeiFox. Built with ❤️ and lots of ☕</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
